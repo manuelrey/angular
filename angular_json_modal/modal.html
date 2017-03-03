@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h1>Test Modal</h1>
+</div>'
+<div class="modal-body">
+  Test Data:
+  
+  <ul ng-repeat="item in items">
+    <li>
+      {{item.test1}}
+      {{item.test2}}
+      {{item.test3}}
+    </li>
+  </ul>
+
+</div>
+
+<div class="modal-footer">
+   <button class="btn btn-success" ng-click="open()">Okay</button>
+   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   <button type="button" class="btn btn-primary">Send message</button>
+</div>
