@@ -1,0 +1,36 @@
+<form>
+            <h3>Insert new task</h3>
+            <div class="has-feedback">
+                <input type="text" class="form-control" placeholder="Task to make" ng-model="task.name"></input>
+                <span class="glyphicon glyphicon-tasks form-control-feedback"></span>
+            </div>
+            <div>
+                <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="lead priority">Choose a priority</span>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="task.priority" value="0"></input> Low
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="task.priority" value="1"></input> Normal
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="task.priority" value="2"></input> High
+                </label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success" ng-click="insert()">Insert</button>
+            </div>
+        </form>
+        {{tasks}}
+        <div class="todoList bg-info">
+            <h4>Task for register</h4>
+            <div class="item" ng-repeat="task in tasks | orderBy:'-priority'">
+                <span class="glyphicon glyphicon-circle-arrow-up" ng-hide="task.priority==2" ng-click="morePriority(task)"></span>
+                <span class="glyphicon glyphicon-circle-arrow-down" ng-hide="task.priority==0" ng-click="lessPriority(task)"></span>
+                <span class="priority">Priority: {{ prioritys[task.priority] }}</span>
+                <span>
+                    <a href="#">Task: {{ task.name }}</a>
+                    <span class="glyphicon glyphicon-edit text-warning" ng-click="processObject(task)"></span>
+                    <span class="glyphicon glyphicon-remove text-danger" ng-click="delete(task)"></span>
+                </span>
+            </div>
+        </div>
