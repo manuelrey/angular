@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1> Pagination in Angular</h1>
+
+<div class="container-fluid">
+	<div ng-controller="test">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>			
+			</thead>
+			<tbody>
+				<tr ng-repeat="obj in users | filter : paginate">
+					<td>{{obj.id}}</td>
+					<td>{{obj.title}}</td>
+				</tr>
+			</tbody>			
+		</table>
+		<pagination total-items="totalItems" ng-model="currentPage"  
+             max-size="5" boundary-links="true"  
+             items-per-page="numPerPage" class="pagination-sm">  
+       </pagination> 	
+	</div>
+</div>
+
+<script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+<script src="http://code.angularjs.org/1.2.16/angular-resource.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
