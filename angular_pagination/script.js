@@ -14,14 +14,13 @@ App.controller('test', ['$scope', '$resource', '$http', function($scope, $resour
        $scope.reverse = true;  
        $scope.currentPage = 1; 
 
-	
-			
+				
 	})
 	$scope.order = function (predicate) {  
 	    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;  
 	    $scope.predicate = predicate;  
 	  };    
-	 $scope.numPerPage = 5;  
+	 $scope.numPerPage = 10;  
 	 $scope.paginate = function (value) {  
 	   var begin, end, index;  
 	   begin = ($scope.currentPage - 1) * $scope.numPerPage;  
